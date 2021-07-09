@@ -1,7 +1,7 @@
 const cors = require ("cors");
 const express = require("express");
 const uuid = require("uuid");
-const stripe = require("stripe")("pk_test_51JAttUFEi1xgGXpkP9U0XWbR1JOBdEZc1WOBamS1dplY5U95b97ZBdJ13dDHWr8Vdcljvqb5uFIzGymcZALBK11c0009dcnIIh");
+const stripe = require("stripe")("sk_test_51JAttUFEi1xgGXpkfdjLWbEDX1NTGdk8aJVD3ox1QdyTfvpEPqjXnU2enjrWE4Gb5Nked3NztQDiWdI31AQgM8EF00BwrRgE6R");
 
 const app = express();
 
@@ -14,11 +14,11 @@ app.get("/", (req, res) => {
     res.send("It's working");
 });
 
-app.post("/payment", (req,res) => {
+app.post("/payment", (req, res) => {
     const {product, token} = req.body;
     console.log("Product ", product);
     console.log("Price ", product.price);
-    const idempontencyKey = uuid()
+    const idempontencyKey = uuid();
 
     return stripe.customers.create({
         email: token.email,
