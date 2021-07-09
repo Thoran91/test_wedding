@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Tom and Katy's Wedding</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- css style sheets (bootstrap and self)--->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="banner-image">
+        <div class="banner-text d-flex flex-column justify-content-center">
+          <h1>Katy & Tom</h1>
+          <h2>are getting married</h2>
+        </div>
+        <div class="button-box d-flex justify-content-center">
+          <a class="link-button grow" href="#venue">Venue</a>
+          <a class="link-button grow" href="#food-and-drink">Food & Drink</a>
+          <a class="link-button grow" href="#gifts">Gifts</a>
+        </div>
+      </div>
+      
+      <div class="venue-card d-flex flex-column justify-content-center align-items-center" id="venue">
+        <h1 class="centered-text title">The Old Mill, Riverstown, Co. Louth</h1>
+        <p>Description of the venue</p>
+        <div class="image-container d-flex flex-column justify-content-center">
+          <img 
+            src="https://res.cloudinary.com/tom-horan/image/upload/v1624370799/wedding_hp1fpr.jpg" 
+            class="img-fluid venue-image" 
+            alt="Responsive image"
+          >
+          <img 
+            src="https://res.cloudinary.com/tom-horan/image/upload/v1624370799/The_Old_Mill_weddings_-_Carlingford_Brewing_Company_-_main_hall_roof_sgthbk.jpg" 
+            class="img-fluid venue-image" 
+            alt="Responsive image"
+          >
+        </div>
+      </div>
+      <div class="map-card d-flex flex-column justify-content-center align-items-center" id="venue">
+        <div class="map-container">
+          <div id="map"></div>
+        </div>
+      </div>   
+
+      <div class="text-card d-flex flex-column justify-content-center align-items-center" id="food-and-drink">
+        <h1 class="centered-text title">Food and Drink</h1>
+        <div class="centered-text">
+          <p class="centered-text">Details of the food and drink options</p>
+          <p>Pig</p>
+          <p>Not pig</p>
+          <p>Lettuce bags</p>
+          <p>
+            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?"
+          </p>
+        </div>
+      </div>
+      <div class="text-card d-flex flex-column justify-content-center align-items-center" id="gifts">
+        <h1>Gifts</h1>
+        <p>Money pleeease</p>
+      </div>
+    </div>
+    <!-- bootstrap script link--->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+    <!-- self written js and jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js" charset="utf-8"></script>
+
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location
+        const carlingford = { lat: 53.9942835247462, lng: -6.221741917436771 };
+        const center = { lat: 54.000301218478484, lng: -6.316976531317811 };
+        // The map
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 11,
+          center: center,
+        });
+        // The marker
+        const marker = new google.maps.Marker({
+          position: carlingford,
+          map: map,
+        });
+      }
+    </script>
+
+    <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBMVA1N9LulZrpfUfRg2rshvb2J6oXhtGo&callback=initMap&libraries=&v=weekly"
+    async
+    ></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&display=swap');
+      </style>
+  </body>
+</html>
